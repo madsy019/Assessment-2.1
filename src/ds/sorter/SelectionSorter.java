@@ -1,6 +1,5 @@
 package ds.sorter;
-
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SelectionSorter<E extends Comparable<E>> implements Sorter<E> {
@@ -10,39 +9,43 @@ public class SelectionSorter<E extends Comparable<E>> implements Sorter<E> {
 	@Override
 	public List<E> sort(List<E> input) {
 		
-		String[] arr = new String[input.size()];
+		//get the size of list parameter
+		int len = input.size();
 		
-		for (int i = 0;i<input.size();i++) {
-			arr[i] = (String) input.get(i);
+		
+		//create Integer type array 
+		Integer[] newarr = new Integer[len];
+		
+
+		//loop to add values to the array
+		for (int i = 0;i<len-1;i++) {
+			newarr[i] = (Integer) input.get(i);
 		}
 		
-		
-	
-		int len = arr.length;
-		
-		//move through the unsorted list one by one
-		for (int i = 0;i<len-1;i++) {
-			
-			//minimum value of the unsorted list
-			int min = i;
-			
-			for (int j = i+1;j<len ;j++) {
-				if(arr[i] < arr[min]) {
-					
-					min = j;
-				}
-					
-			E temp = arr[min];
-			arr[min] = arr[i];
-			arr[i] = temp;
-					
+		//loop to find int value that should be in each element
+		for (int i = 0;i<newarr.length;i++) {
+			//store minimum value as the first value
+			int min =i;
+			//look through the unsorted array
+			for (int k = i +1;i<newarr.length;k++) {
 				
+				if(newarr[k] < (newarr[min] )) {
+					min = k;
+				}
+			
+			//swap values when a higher value is found.	
+			int temp = newarr[i];
+			newarr[i] = newarr[min];
+			newarr[min] = temp;
 			}
 			
 			
 		}
 		
-		return null;
+		List<Integer> targetList = Arrays.asList(newarr);
+	
+		return (List<E>) targetList;
    	}
 
+	
 }
