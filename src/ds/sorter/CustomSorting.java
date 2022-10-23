@@ -19,13 +19,23 @@ public class CustomSorting {
 	 */
 	public static List<Fruit> sortByType(List<Fruit> list) {
 		
+		String fruitName = "";
 		
+		for(int i = 0; i< list.size(); i++) {
+			list.get(i).getType();
+		}
 		return null;
-		/*
-		return list.sort(new Comparator<Fruit>() {
-			// Implement your custom compare method here. 
-		});
-		*/
+		
+//		return list.sort(new Comparator<Fruit>() {
+//
+//			@Override
+//			public int compare(Fruit o1, Fruit o2) {
+//				// TODO Auto-generated method stub
+//				return 0;
+//			}
+//			// Implement your custom compare method here. 
+//		});
+//		
 	}
 	
 	

@@ -6,6 +6,9 @@ public class MergeSorter<E extends Comparable<E>> implements Sorter<E> {
 
 	@Override
 	public List<E> sort(List<E> input) {
+		
+		List <E>  newlist;
+		
 		return input;
 	}
 }

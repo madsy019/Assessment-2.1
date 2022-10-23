@@ -27,11 +27,12 @@ class FruitTest {
 		
 		assertThrows(InvalidFruitWeightException.class, () -> {
 	        new Fruit(Fruit.TYPE.APPLE, -1.0, .5);
+	        
 	    });
-//
-//		assertThrows(InvalidFruitRipenessException.class, () -> {
-//	        new Fruit(Fruit.TYPE.APPLE, 1.0, 1.1);
-//	    });
+
+		assertThrows(InvalidFruitRipenessException.class, () -> {
+	        new Fruit(Fruit.TYPE.APPLE, 1.0, 1.1);
+	    });
 	}
 	
 	

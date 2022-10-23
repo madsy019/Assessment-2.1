@@ -4,7 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class InvalidFruitWeightException extends Exception {
 
-	@BeforeEach
-	void setUp() throws Exception {
+	public InvalidFruitWeightException(String message) {
+		super(message);
 	}
+	
+	
 }
